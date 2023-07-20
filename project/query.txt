@@ -1,0 +1,7 @@
+SELECT p1.*
+FROM post p1
+LEFT JOIN comment c1 ON p1.id = c1.postid
+LEFT JOIN author a1 ON p1.authorid=a1.id
+LEFT JOIN user u1 ON c1.userid = u1.id
+WHERE a1.name = 'James Bond' ORDER BY c1.createdts DESC LIMIT 10
+;
